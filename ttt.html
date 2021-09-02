@@ -1,0 +1,51 @@
+
+<body>
+<script>
+
+    function computerPlay() {
+        let rps = Math.floor(Math.random() * 3) + 1;
+        if (rps === 1) {
+           return 'rock';
+        } else if (rps === 2) {
+            return 'paper';
+        } else if (rps === 3) {
+            return 'scissors';
+        }
+    }
+     
+
+     function playRps(playerSel, computerSel) {
+         if (playerSel === 'rock' && computerSel === 'scissors') {
+             console.log(`You Win! rock beats scissors`)
+         } else if (playerSel === 'rock' && computerSel === 'rock') {
+             console.log(`it's a tie`)
+         } else if (playerSel === 'rock' && computerSel === 'paper') {
+             console.log(`You Lose! paper beats rock`)
+         } else if (playerSel === 'paper' && computerSel === 'rock') {
+             console.log(`You Win! paper beats rock`)
+         } else if (playerSel === 'paper' && computerSel === 'paper') {
+             console.log(`it's a tie`)
+         } else if (playerSel === 'paper' && computerSel === 'scissors') {
+             console.log(`You Lose! scissors beats paper`)
+         } else if (playerSel === 'scissors' && computerSel === 'paper') {
+             console.log(`You Win! scissors beats paper`)
+         } else if (playerSel === 'scissors' && computerSel === 'scissors') {
+             console.log(`it's a tie`)
+         } else if (playerSel === 'scissors' && computerSel === 'rock') {
+             console.log(`You Lose! rock beats paper`)
+         }
+     }
+
+     const playerSel = prompt(`Rock, Paper, Scissors`).toLowerCase();
+     const computerSel = computerPlay();
+
+     playRps(playerSel, computerSel);
+
+     function game(numOfTimes) {
+         for(i = 0; i <= 5; i++) {
+            playRps(playerSel, computerSel);
+         }
+     }
+    
+</script>
+</body>
